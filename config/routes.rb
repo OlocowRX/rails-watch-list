@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :lists do
-    resources :bookmarks
+    resources :bookmarks, only: %i[new create]
   end
 
-  delete 'bookmarks/:id', to: 'bookmarks#destroy'
+  resources :bookmarks, only: :destroy
+  # delete 'bookmarks/:id', to: 'bookmarks#destroy', as: 'bookmark'
+  root to: 'lists#index'
 end
