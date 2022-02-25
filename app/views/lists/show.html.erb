@@ -1,14 +1,14 @@
 <h1><%= @list.name %></h1>
 
-<ul class="list-group">
-  <% @list.bookmarks.each do |bookmark| %>
-    <li class="list-group-item">
-        <%= bookmark.movie.title %>
-        <%= bookmark.comment %>
-        <%= link_to "[Delete]",
-                    bookmark_path(bookmark),
-                    method: :delete,
-                    data: { confirm: "Are you sure?" } %>
-    </li>
-  <% end %>
-</ul>
+<div class="container mt-5">
+  <div class="head d-flex justify-content-between">
+  <p></p>
+    <%= link_to 'Create a new bookmark', new_list_bookmark_path(@list), class: 'btn btn-success'%>
+  </div>
+
+  <div class="cards">
+    <%= render 'bookmark_card', list: @list %>
+  </div>
+
+
+</div>

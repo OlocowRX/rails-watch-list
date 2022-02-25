@@ -1,0 +1,29 @@
+<% @list.bookmarks.each do |bookmark| %>
+
+  <div class="card-trip d-flex flex-column justify-content-between">
+
+    <img src="<%=bookmark.movie.poster_url%>"/>
+
+    <div class="card-trip-infos">
+      <div>
+        <div class="movie-header">
+          <p> <strong><%= bookmark.movie.title %></strong> - <%= bookmark.movie.rating %></p>
+          <p><%= bookmark.movie.overview %></p><br>
+        </div>
+
+
+      </div>
+    </div>
+    <div class="movie-footer d-flex justify-content-between">
+          <p><strong>
+            <i class="fas fa-quote-left"></i>
+            <%= bookmark.comment %>
+          </strong></p>
+
+          <%= link_to "Delete",
+                    bookmark_path(bookmark),
+                    method: :delete,
+                    data: { confirm: "Are you sure?" } %>
+        </div>
+  </div>
+<% end %>
