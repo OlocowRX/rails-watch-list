@@ -1,4 +1,4 @@
-<h1><%= @list.name %></h1>
+<%= render 'show_banner', list: @list %>
 
 <div class="container mt-5">
   <div class="head d-flex justify-content-between">
@@ -9,6 +9,4 @@
   <div class="cards">
     <%= render 'bookmark_card', list: @list %>
   </div>
-
-
 </div>
