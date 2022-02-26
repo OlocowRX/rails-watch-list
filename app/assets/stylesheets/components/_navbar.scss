@@ -13,4 +13,17 @@
 .navbar-brand {
   margin: 0;
   padding: 0;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #aaa;
+  &:hover {
+    box-shadow: 0 0 3px #FD1015, 0 0 10px #FD1015, 0 0 20px #FD1015;
+    transition: 0.5s;
+  }
+  transition: 0.3s;
+}
+
+.navbar-nav .nav-item{
+ &:hover {
+   color: #000;
+ }
 }
