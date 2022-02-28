@@ -99,3 +99,9 @@
     font-weight: 600;
   }
 }
+
+.textarea {
+  overflow-y: auto;
+  height: 9rem;
+  resize: none; /* Remove this if you want the user to resize the textarea */
+}
