@@ -6,7 +6,14 @@
     <%= link_to 'Create a new bookmark', new_list_bookmark_path(@list), class: 'btn btn-success'%>
   </div>
 
-  <div class="cards">
-    <%= render 'bookmark_card', list: @list %>
+  <% if @list.bookmarks.count == 0 %>
+  <div class="container d-flex flex-column align-items-center mt-5">
+    <h2>No movies added yet.</h2>
+    <p> Click in the <span style="color: #40e29a;">green</span> button right there!</p>
   </div>
+  <% else %>
+    <div class="cards">
+      <%= render 'bookmark_card', list: @list %>
+    </div>
+  <% end %>
 </div>
