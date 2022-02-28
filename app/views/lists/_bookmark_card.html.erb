@@ -17,7 +17,7 @@
     <div class="movie-footer d-flex justify-content-between">
           <p><strong>
             <i class="fas fa-quote-left"></i>
-            <%= bookmark.comment %>
+            <%= link_to bookmark.comment, edit_list_bookmark_path(bookmark), style: "color: black; font-size: 12px;" %>
           </strong></p>
 
           <%= link_to "Delete",

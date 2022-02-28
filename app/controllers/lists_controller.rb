@@ -1,5 +1,5 @@
 class ListsController < ApplicationController
-  before_action :set_params, only: %i[show]
+  before_action :set_params, only: %i[show edit update destroy]
 
   def index
     @lists = List.all
@@ -20,6 +20,22 @@ class ListsController < ApplicationController
     else
       render 'new'
     end
+  end
+
+  def edit; end
+
+  def update
+    if @list.update(list_params)
+      redirect_to @list
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    @list.destroy
+
+    redirect_to lists_path
   end
 
   private

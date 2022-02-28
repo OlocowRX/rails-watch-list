@@ -1,0 +1,10 @@
+ <div class="container pt-5">
+  <h1>Edit this Bookmark</h1>
+
+  <div>
+  </div>
+  <%= simple_form_for @bookmark, :url => list_update_path do |f| %>
+    <%= f.input :comment %>
+    <%= f.button :submit, class: 'btn btn-primary' %>
+  <% end %>
+</div>

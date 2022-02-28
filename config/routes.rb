@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  resources :lists, only: %i[index show new create] do
-    resources :bookmarks, only: %i[new create]
+  resources :lists do
+    resources :bookmarks, only: %i[new create edit]
+    resources :bookmarks, only: %i[update], as: :update
   end
 
   resources :bookmarks, only: :destroy
+  resources :lists, only: :destroy
   root to: 'lists#index'
 end
