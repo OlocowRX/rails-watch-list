@@ -3,7 +3,7 @@
 
   <%= simple_form_for [@list, @bookmark] do |f| %>
     <%= f.input :comment %>
-    <%= f.association :movie %>
+    <%= f.association :movie, collection: Movie.all.order(:title) %>
     <%= f.button :submit, class: 'btn btn-primary' %>
   <% end %>
 </div>
